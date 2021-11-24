@@ -11,14 +11,13 @@ import {UnitTwoRoutingModule} from './unit-two/unit-two-routing.module';
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
-    children: [
-      { path: '', loadChildren: () => import('./unit/unit.module').then((m) => m.UnitModule) },
-      { path: 'unit-two', loadChildren: () => import('./unit-two/unit-two.module').then((m) => m.UnitTwoModule) },
-      { path: 'cli', loadChildren: () => import('./cli/cli.module').then((m) => m.CliModule) },
-      { path: 'integrate', loadChildren: () => import('./integrate/integrate.module').then((m) => m.IntegrateModule) }
-    ],
+    redirectTo: 'unit',
+    pathMatch: 'full'
   },
+  { path: 'unit', loadChildren: () => import('./unit/unit.module').then((m) => m.UnitModule) },
+  { path: 'unit-two', loadChildren: () => import('./unit-two/unit-two.module').then((m) => m.UnitTwoModule) },
+  { path: 'cli', loadChildren: () => import('./cli/cli.module').then((m) => m.CliModule) },
+  { path: 'integrate', loadChildren: () => import('./integrate/integrate.module').then((m) => m.IntegrateModule) },
   {
     path: '**',
     component: PageNotFoundComponent
@@ -28,10 +27,6 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {relativeLinkResolution: 'legacy', useHash: true})
-    , IntegrateRoutingModule
-    , CliRoutingModule
-    , UnitRoutingModule
-    , UnitTwoRoutingModule
   ],
   exports: [RouterModule]
 })

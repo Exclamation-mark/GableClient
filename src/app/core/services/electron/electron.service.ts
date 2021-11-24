@@ -36,4 +36,14 @@ export class ElectronService {
       this.remote = window.require('@electron/remote');
     }
   }
+
+  reload() {
+    if (this.isElectron) {
+      console.log('is electron');
+      location.reload();
+    } else {
+      console.log('is not electron');
+      location.reload();
+    }
+  }
 }

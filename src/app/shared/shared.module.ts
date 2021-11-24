@@ -6,8 +6,6 @@ import {NzButtonModule} from 'ng-zorro-antd/button';
 import {PageNotFoundComponent} from './components/';
 import {WebviewDirective} from './directives/';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {BrowserModule} from '@angular/platform-browser';
 import {NzLayoutModule} from 'ng-zorro-antd/layout';
 import {NzTabsModule} from 'ng-zorro-antd/tabs';
 import {NzRadioModule} from 'ng-zorro-antd/radio';
@@ -77,9 +75,7 @@ import {NgTerminalModule} from 'ng-terminal';
     NzButtonModule,
     NzPageHeaderModule,
     NzDrawerModule,
-    BrowserModule,
     NzDropDownModule,
-    BrowserAnimationsModule,
     FormsModule,
     NzStepsModule,
     ReactiveFormsModule

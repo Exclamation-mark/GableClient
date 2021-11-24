@@ -10,6 +10,7 @@ import {AppRoutingModule} from './app-routing.module';
 // NG Translate
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 import {AppComponent} from './app.component';
@@ -22,7 +23,7 @@ import {AppRoutingCache} from './core/AppRoutingCache';
 import {MONACO_PATH} from '@materia-ui/ngx-monaco-editor';
 import {HttpI18nInterceptor} from './core/HttpI18nInterceptor';
 import {CliModule} from './cli/cli.module';
-import {UnitTwoModule} from "./unit-two/unit-two.module";
+import {UnitTwoModule} from './unit-two/unit-two.module';
 
 // AoT requires an exported function for factories
 const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader => new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -31,6 +32,7 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader => new Transla
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
     CoreModule,
